@@ -1,0 +1,27 @@
+
+Check if site is in top, bottom, left, right
+// if (row - 1 == 0 && col - 1 == 0) // Top left site (row 0, col 0)
+        // {
+        //
+        // }
+        // else if (row - 1 == 0 && col == this.size) // Top right site (row 0, col n)
+        // {
+        //
+        // }
+        // else if (row == this.size && col - 1 == 0) // Bottom left site (row n, col 0)
+        // {
+        //
+        // }
+        // else if (row == this.size && col == this.size)
+        // {
+        //
+        // }
+
+
+Union top row to 0, bottom row to bottom
+// for (int i = 1; i < n + 1; i++) {
+        //     // Union top row to virtual site 0
+        //     uf.union(i, this.top);
+        //     // Union bottom row to virtual site n + 1
+        //     uf.union(xyToArrayIndex(n - 1, i), bottom);
+        // }
