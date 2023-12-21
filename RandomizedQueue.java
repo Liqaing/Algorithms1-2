@@ -33,6 +33,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     // add the item
     // Add item to tail of the queue, if the queue is full then resize it
     public void enqueue(Item item) {
+        if (item == null) {
+            throw new IllegalArgumentException();
+        }
+
         if (numberOfElement == randomizedQueue.length) {
             resizeArray(randomizedQueue.length * 2);
         }
@@ -43,6 +47,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     // remove and return a random item
     // Get random array index, then swap the element at that index to last element
     public Item dequeue() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
         int randomIndex = getRandomIndex(numberOfElement - 1);
         Item item = randomizedQueue[randomIndex];
         // Minus one from numberOfElement then access the element in queue
@@ -56,6 +64,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     // return a random item (but do not remove it)
     public Item sample() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
         int randomIndex = getRandomIndex(numberOfElement - 1);
         Item item = randomizedQueue[randomIndex];
         return item;
@@ -98,6 +110,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
             return item;
         }
 
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
     }
 
     // Create new array with double the size, and copy element to the new array
@@ -156,7 +171,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         for (String item : rq) {
             System.out.print(item + " ");
         }
-        
+
         System.out.println(" ");
 
         for (String item : rq) {
